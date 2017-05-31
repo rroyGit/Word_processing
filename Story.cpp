@@ -7,14 +7,14 @@ using namespace std;
 
 
 Story::Story() {
-	cout << "Entering Story::Story Constructor" << endl;
+	//cout << "Entering Story::Story Constructor" << endl;
 	
-	cout << "	Exiting Story::Story Constructor" << endl;
+	//cout << "	Exiting Story::Story Constructor" << endl;
 }
 //open the file named the passed string value
 //construct from it a new instance of the Story class, with contents appropriately divided into objects that contain linked lists of Paragraphs, Sentences, and Words. 
 Story::Story(const string& a) {
-	cout << "Entering Story::Story(string arg)" << endl;
+	//cout << "Entering Story::Story(string arg)" << endl;
 	head = NULL;
 	next = NULL;
 	//open file
@@ -51,10 +51,10 @@ Story::Story(const string& a) {
 	
 	temp = NULL; //set last paragraph node NULL
 	
-	cout << "	Exiting Story::Story(string arg)" << endl;
+	//cout << "	Exiting Story::Story(string arg)" << endl;
 }
 Story::Story(const Story& aStory) {
-	cout << "Entering Story::Story(Story arg) Copy Constructor" << endl;
+	//cout << "Entering Story::Story(Story arg) Copy Constructor" << endl;
 	
 	if(aStory.head == NULL){
 		cout << "aStory.head is NULL" << endl;
@@ -77,10 +77,10 @@ Story::Story(const Story& aStory) {
 	}
 		newTemp->next = NULL;
 
-	cout << "	Exiting Story::Story(Story arg) Copy Constructor" << endl;
+	//cout << "	Exiting Story::Story(Story arg) Copy Constructor" << endl;
 }
 Story::~Story() {
-	cout << "Entering Story::~Story Deconstructor" << endl;
+	//cout << "Entering Story::~Story Deconstructor" << endl;
 	/*
 	Paragraph* temp = head;
 	while(temp != NULL) {
@@ -90,12 +90,12 @@ Story::~Story() {
 	}
 	head = NULL;
 	*/
-	cout << "	Exiting Story::~Story Deconstructor" << endl;
+	//cout << "	Exiting Story::~Story Deconstructor" << endl;
 }
 //Story + Story
 //new Story containing the paragraphs of the first Story followed by the paragraphs of the second Story
 Story Story::operator+(const Story& b) {
-	cout << "Entering Story::operator+ (Story arg)" << endl;
+	//cout << "Entering Story::operator+ (Story arg)" << endl;
 	Story newStory;
 	
 	if(b.head == NULL){
@@ -114,13 +114,13 @@ Story Story::operator+(const Story& b) {
 	newStory.head = story1->head;
 	newStory.next = NULL;
 	
-	cout << "	Exiting Story::operator+ (Story arg)" << endl;
+	//cout << "	Exiting Story::operator+ (Story arg)" << endl;
 	return newStory;
 }
 //Story + Paragraph
 //new Story with an additional paragraph at the end 
 Story Story::operator+(const Paragraph& b) {
-	cout << "Entering Story::operator+ (Paragraph arg)" << endl;
+	//cout << "Entering Story::operator+ (Paragraph arg)" << endl;
 	Story newStory;
 
 	if(b.head == NULL){
@@ -144,13 +144,13 @@ Story Story::operator+(const Paragraph& b) {
 	
 	
 	
-	cout << "	Exiting Story::operator+ (Paragraph arg)" << endl;
+	//cout << "	Exiting Story::operator+ (Paragraph arg)" << endl;
 	return newStory;
 }
 //Paragraph + Story
 //new Story with an additional paragraph at the beginning
 Story operator+(const Paragraph& a, const Story& b) {
-	cout << "Entering operator+(Story arg, Paragraph arg)" << endl;
+	//cout << "Entering operator+(Story arg, Paragraph arg)" << endl;
 	Story newStory;
 
 	if(a.head == NULL || b.head == NULL){
@@ -168,14 +168,14 @@ Story operator+(const Paragraph& a, const Story& b) {
 	newStory.next = NULL;
 
 
-	cout << "	Exiting operator+(Story arg, Paragraph arg)" << endl;
+	//cout << "	Exiting operator+(Story arg, Paragraph arg)" << endl;
 	return newStory;
 }
 
 //If a is a Story
 //makes the whole story all caps. 
 Story Story::operator++(int) {
-	cout << "Entering Story::operator++, postfix" << endl;
+	//cout << "Entering Story::operator++, postfix" << endl;
 	
 	Story story(*this);
 	Paragraph* temp = story.head;
@@ -185,13 +185,13 @@ Story Story::operator++(int) {
 		temp = temp->next;
 	}
 	
-	cout << "	Exiting Story::operator++, postfix" << endl;
+	//cout << "	Exiting Story::operator++, postfix" << endl;
 	return story;
 }
 //If a is a Story
 //makes the whole story all lowercase
 Story Story::operator--(int) {
-	cout << "Entering Story::operator--, postfix" << endl;
+	//cout << "Entering Story::operator--, postfix" << endl;
 	
 	Story story(*this);
 	Paragraph* temp = story.head;
@@ -201,13 +201,13 @@ Story Story::operator--(int) {
 		temp = temp->next;
 	}
 	
-	cout << "	Exiting Story::operator--, postfix" << endl;
+	//cout << "	Exiting Story::operator--, postfix" << endl;
 	return story;
 }
 //If a is a Story, 
 //capitalizes the first words of all contained sentences.
 Story& Story::operator+(const int& i) {
-	cout << "Entering Story::operator+" << endl;
+	//cout << "Entering Story::operator+" << endl;
 	if (i != 1) return *this;
 	
 	Paragraph *temp = this->head;
@@ -218,12 +218,12 @@ Story& Story::operator+(const int& i) {
 		temp = temp->next;
 	}
 	
-	cout << "	Exiting Story::operator+" << endl;
+	//cout << "	Exiting Story::operator+" << endl;
 	return *this;
 }
 
 void Story::show() {
-	cout << "Entering Story::show()" << endl;
+	//cout << "Entering Story::show()" << endl;
 	
 	if (head ==  NULL){
 		cout << "head NULL in Story::show()" << endl;
@@ -236,13 +236,13 @@ void Story::show() {
 		temp = temp->next;
 	}
 	
-	cout << "	Exiting Story::show()" << endl;
+	//cout << "	Exiting Story::show()" << endl;
 }
 
 //If a is a Story
 //converts the whole story to Pig Latin. 
 Story& Story::operator++() {
-	cout << "Entering Story::operator++, prefix" << endl;
+	//cout << "Entering Story::operator++, prefix" << endl;
 	
 	Paragraph* temp0 = this->head;
 	Sentence* temp;
@@ -263,13 +263,13 @@ Story& Story::operator++() {
 		temp0 = temp0->next;
 	}	
 	
-	cout << "	Exiting Story::operator++, prefix" << endl;
+	//cout << "	Exiting Story::operator++, prefix" << endl;
 	return *this;
 }
 //If a is a Story
 //converts all contained Words that are in Pig Latin back to English.  
 Story& Story::operator--() {
-	cout << "Entering Story::operator--, prefix" << endl;
+	//cout << "Entering Story::operator--, prefix" << endl;
 	
 	Paragraph* temp0 = this->head;
 	Sentence* temp;
@@ -291,13 +291,13 @@ Story& Story::operator--() {
 		temp0 = temp0->next;
 	}	
 	
-	cout << "	Exiting Story::operator--, prefix" << endl;
+	//cout << "	Exiting Story::operator--, prefix" << endl;
 	return *this;
 }
 
 //The Story class should output contained paragraphs, with blank lines between them
 ostream& operator<<(ostream& out, const Story& b) {
-	cout << "Entering Story operator<<" << endl;
+	//cout << "Entering Story operator<<" << endl;
 	
 	Paragraph* temp = b.head;
 	while(temp != NULL){
@@ -307,12 +307,12 @@ ostream& operator<<(ostream& out, const Story& b) {
 		temp = temp->next;
 	}
 	
-	cout << "	Exiting Story operator<<" << endl;
+	//cout << "	Exiting Story operator<<" << endl;
 	return out;
 }
 //myStory.first() returns a Paragraph containing a copy of the first paragraph of myStory. 
 Paragraph Story::first() {
-	cout << "Entering Story::first()" << endl;
+	//cout << "Entering Story::first()" << endl;
 	
 	Story copy(*this);
 	Paragraph newP;
@@ -320,24 +320,24 @@ Paragraph Story::first() {
 	Paragraph* temp = copy.head;
 	newP = *temp;
 	
-	cout << "	Exiting Story::first()" << endl;
+	//cout << "	Exiting Story::first()" << endl;
 	return newP;
 }
 //myStory.rest() returns a Story containing a copy of all but the first paragraph of myStory. 
 Story Story::rest() {
-	cout << "Entering Story::rest()" << endl;
+	//cout << "Entering Story::rest()" << endl;
 	Story copy(*this);	
 	Story newS;
 	
 	Paragraph* temp = copy.head;
 	newS.head = temp->next;
 
-	cout << "	Exiting Story::rest()" << endl;
+	//cout << "	Exiting Story::rest()" << endl;
 	return newS;
 }
 
 void Story::save(const string& a) {
-	cout << "Entering Story::save(string arg)" << endl;
+	//cout << "Entering Story::save(string arg)" << endl;
 	
 	Story copy(*this);
 	
@@ -351,11 +351,11 @@ void Story::save(const string& a) {
  	} else cout << "Unable to open file";
 
 
-	cout << "	Exiting Story::save(string arg)" << endl;
+	//cout << "	Exiting Story::save(string arg)" << endl;
 }
 
 Story& Story::operator=(const Story& aStory) {
-	cout << "Entering Story::operator=(Story arg)" << endl;
+	//cout << "Entering Story::operator=(Story arg)" << endl;
 
 	//perform destructor 
 
@@ -377,5 +377,5 @@ Story& Story::operator=(const Story& aStory) {
 		newTemp->next = NULL;
 
 	return *this;
-	cout << "	Exiting Story::operator=(Story arg)" << endl;
+	//cout << "	Exiting Story::operator=(Story arg)" << endl;
 }

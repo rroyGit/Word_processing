@@ -15,23 +15,23 @@ int main() {
 	Word like("like");
 	Word thiss("this");
 	
-	
 	Story file("input.txt");
 	//file.show();
+	cout << file;
 	//file.save("output.txt");
 	//file.show();
 	//Story f = file + file;
+	//f.show();
 
 	cout << "-----------------------------START---------------------------" << endl;
 	//f.show();
 	//cout << file.rest();
 	
 	//Sentence r("Like this like.");
-		
+	//Paragraph gg("Hello World to CStwoforty! The robot exclaimed. It was excited to receive a new incoming class of students to teach for the semester.		The End.");
 	
-	Paragraph gg("Hello World to CStwoforty! The robot exclaimed. It was excited to receive a new incoming class of students to teach for the semester.		");
-	
-	Story p = file + gg;
+	//Story p = file + gg;
+	//p.show();
 	//cout << p;
 	
 	
@@ -107,9 +107,6 @@ int main() {
 	//Paragraph y = a + x;
 	
 	//Paragraph q = x + ((bye + hello) + (hello + cs240)); //head is null in paragraph copy constructor
-	
-	
-	
 	
 	cout << "------------------------------Show---------------------------" << endl;
 	//y.show();
