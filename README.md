@@ -17,7 +17,7 @@ c) convert to all caps, all lowercase, designated captilization, and Pig Latin
 d) pull apart and recombine stories and their components (paragraphs and sentences)
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-Requirements specified by Michael Lewis.
+Requirements specified by Professor Michael Lewis.
 Program 1: “Word Processing” CS-240 Fall 2016: Data Structures
 
 Requirements Overload the following operators to operate on (or with) the four C++ classes that you write, as follows.
