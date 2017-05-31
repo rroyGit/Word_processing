@@ -5,6 +5,7 @@ class Sentence;
 class Paragraph;
 
 #include "Word.h"
+#include <vector>
 
 
 class Sentence {
@@ -25,11 +26,11 @@ public:
 	
 	Sentence operator+(const Word& a);
 	//postfix
-    Sentence& operator++(int);
-	Sentence& operator--(int);
+    Sentence operator++(int);
+	Sentence operator--(int);
 	//postfix
 	
-	void operator=(const Sentence& aSen);
+	Sentence& operator=(const Sentence& aSen);
 	Sentence& operator+(const int& i);
 	
 	//prefix
@@ -40,10 +41,12 @@ public:
 	Word first();
 	Sentence rest();
 	
-private:
-	Word* w;
+	Word* head;
+	Sentence* next;
 	
-
+	
+private:
+	vector<string> v; //delete vector or not?
 };
 
 #endif

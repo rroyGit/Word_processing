@@ -5,6 +5,7 @@ class Word;
 class Sentence;
 
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
@@ -23,11 +24,11 @@ public:
 	void show();
 	friend ostream& operator<<(ostream& out, const Word& a);
 	//postfix
-	Word& operator++(int);
-	Word& operator--(int);
+	Word operator++(int);
+	Word operator--(int);
 	//postfix
 	
-	void operator=(const Word& aword);
+	Word& operator=(const Word& aword);
 	Word& operator+(const int& i);
 	
 	//prefix
@@ -35,14 +36,13 @@ public:
 	Word& operator--();
 	//prefix
 	
+	Word* next;
 	string dummyString;
+
 private:
-	
+	vector<string> v;
 	
 };
-
-
-
 
 
 #endif

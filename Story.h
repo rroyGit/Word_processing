@@ -4,6 +4,7 @@
 class Story;
 
 #include "Paragraph.h"
+#include <vector>
 
 class Story {
 
@@ -13,7 +14,7 @@ public:
 	Story();
 	~Story();
 	Story(const Story& aStory);
-	Story(const string& a);
+	Story(const string& a);  
 	
 
 	void show();
@@ -25,11 +26,11 @@ public:
 	Story operator+(const Paragraph& b);
 	
 	//posstfix
-    Story& operator++(int);
-	Story& operator--(int);
+    Story operator++(int);
+	Story operator--(int);
 	//postfix
 	
-	void operator=(const Story& aStory);
+	Story& operator=(const Story& aStory);
 	Story& operator+(const int& i);
 	
 	//prefix
@@ -39,11 +40,14 @@ public:
 
 	Paragraph first();
 	Story rest();
+	
+	Paragraph* head;
+	Story* next;
 
+	
 private:
-	Paragraph* p;
-
-       
+	vector<string> v;
+	
 };
 
 #endif

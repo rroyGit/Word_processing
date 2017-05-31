@@ -4,6 +4,7 @@
 class Paragraph;
 
 #include "Sentence.h"
+#include <vector>
 
 
 class Paragraph {
@@ -23,11 +24,11 @@ public:
 	Paragraph operator+(const Sentence& b);
 	Paragraph operator+(const Paragraph& b);
 	//postfix
-	Paragraph& operator++(int);
-	Paragraph& operator--(int);
+	Paragraph operator++(int);
+	Paragraph operator--(int);
 	//postfix
 	
-	void operator=(const Paragraph& aPara);
+	Paragraph& operator=(const Paragraph& aPara);
 	Paragraph& operator+(const int& i);
 
 	//prefix
@@ -37,13 +38,14 @@ public:
 	
 	Sentence first();
 	Paragraph rest();
-
+	
+	Sentence* head;
+	Paragraph* next;
+	
+	
 private:
-	Sentence* s;
-
+	vector<string> v;
 
 };
-
-
 
 #endif

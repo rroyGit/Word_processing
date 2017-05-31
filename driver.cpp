@@ -6,10 +6,138 @@
 
 int main() {
 
-  Word hello("Hello");
-  Word bye("Bye");
-  Word cs240("CStwoforty");
+  	/*
+	Word hello("hello");
+  	Word bye("bye");
+  	Word cs240("cStwoforty");
+	Word gg("gG");
+	*/
+	Word like("like");
+	Word thiss("this");
+	
+	
+	Story file("input.txt");
+	//file.show();
+	//file.save("output.txt");
+	//file.show();
+	//Story f = file + file;
 
+	cout << "-----------------------------START---------------------------" << endl;
+	//f.show();
+	//cout << file.rest();
+	
+	//Sentence r("Like this like.");
+		
+	
+	Paragraph gg("Hello World to CStwoforty! The robot exclaimed. It was excited to receive a new incoming class of students to teach for the semester.		");
+	
+	Story p = file + gg;
+	//cout << p;
+	
+	
+	//gg.show();
+	
+	
+	//cout << --f;
+	/*
+	hello++;
+	hello.show();
+	
+	hello--;
+	hello.show();
+	
+	hello + 1;
+	hello.show();
+	
+	bye = hello;
+	bye.show();
+	
+	++hello;
+	hello.show();
+
+	*/
+	cout << "----------------------------Sentence-------------------------" << endl;
+	
+	//Sentence a = like + (thiss + like);
+	//cout << a;
+	//a.rest().show();
+	///a++.show();
+	//a.show();
+	
+	//Sentence b = bye + (cs240 + hello);
+	//b.show();
+	
+	
+	//Sentence c = a + bye;
+	//c.show();
+	
+	//Sentence d = hello + (bye + cs240);
+	//d.show();
+	
+	//Sentence e = bye + d;
+	//e.show();
+	
+	cout << "---------------------------Paragraph-------------------------" << endl;
+	//Paragraph x = (like + thiss) + (like + like);
+	//x.show();
+	//Story s =  x + file;
+	//s.show();
+	
+	//x + 1;
+	//cout << x ;
+	//cout << ++x;
+	//cout << --x;
+	//x.show();
+	//++x;
+	//x.show();
+	//x = x + x;
+	//x.first().show();
+	//x++.show();
+	//x + 1;
+	//x.show();
+	
+	//std::cout << x.rest();
+	//x.show();
+
+	//Paragraph z = x + a;
+	//z--.show();
+	//z.show();
+	
+	//sen + para
+	//Paragraph y = a + x;
+	
+	//Paragraph q = x + ((bye + hello) + (hello + cs240)); //head is null in paragraph copy constructor
+	
+	
+	
+	
+	cout << "------------------------------Show---------------------------" << endl;
+	//y.show();
+	//q.show();
+	
+	//std::cout << z.first();
+	//std::cout << z.rest();
+	//std::cout << x.rest();  
+	//z.show();
+	//b--;
+	//b.show();
+	//b+1;
+	//b.show();
+	
+	//std::cout << b;
+	
+	//std::cout << b.first();
+	
+	//std::cout << d.first();
+	
+	//std::cout << e.rest();
+	
+	//std::cout << d.rest();
+	
+	//bye = hello;
+	//bye.show();
+	
+/*
 {
     // test Word + Word
     std::cout << (hello + bye) << std::endl;
@@ -169,5 +297,6 @@ int main() {
      story.save("output.txt");
   }
   //works
+  */
 	return 0;
 }
