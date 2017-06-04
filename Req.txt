@@ -1,0 +1,56 @@
+-----------------------------------------------------------------------------
+Requirements specified by Professor Michael Lewis.
+Program 1: “Word Processing” CS-240 Fall 2016: Data Structures
+
+Requirements Overload the following operators to operate on (or with) the four C++ classes that you write, as follows.
+a + b (In the descriptions below, when appropriate, please interpret “Story” to mean “instance of the C++ Story class”, and do the same for Paragraph, Sentence, and Word. 
+• Story + Story evaluates to a new Story containing the paragraphs of the first Story followed by the paragraphs of the second Story.
+• Story + Paragraph evaluates to a new Story with an additional paragraph at the end 
+• Paragraph + Story evaluates to a new Story with an additional paragraph at the beginning 
+• Paragraph + Paragraph evaluates to a new Paragraph with Sentences of the first followed by Sentences of the second
+• Paragraph + Sentence evaluates to a new Paragraph with an additional Sentence at the end 
+• Sentence + Paragraph evaluates to a new Paragraph with an additional Sentence at the beginning 
+• Sentence + Sentence evaluates to a new Paragraph containing the two sentences 
+• Sentence + Word evaluates to a new Sentence with the Word added to the end 
+• Word + Sentence evaluates to a new Sentence with the Word added to the beginning 
+• Word + Word evaluates to a new Sentence containing the two words. 
+• Notice that the + operator, in all cases, returns an object that did not exist before + was invoked.
+a++
+• If a is a Word, makes it all caps. 
+• If a is a Sentence, makes the whole sentence all caps. 
+• If a is a Paragraph, makes the whole paragraph all caps. 
+• If a is a Story, makes the whole story all caps. 
+• Notice that the ++ operator does not create a new object; instead, it modifies an object. Return a reference to the object, as shown in class.
+a--
+• If a is a Word, makes it all lowercase. 
+• If a is a Sentence, makes the whole sentence all lowercase. 
+• If a is a Paragraph, makes the whole paragraph all lowercase. 
+• If a is a Story, makes the whole story all lowercase. 
+• Notice that the -- operator does not create a new object; instead, it modifies an object.
+a + 1 
+• If a is a Word, capitalizes the first letter. 
+• If a is a Sentence, capitalizes the first letter of the sentence. 
+• If a is a Paragraph or Story, capitalizes the first words of all contained sentences. 
+• a + 2 (or a + <any other integer>) should not alter the Word, Sentence, Paragraph, or Story in any way. Simply ignore it.
+++a
+• If a is a Word, converts it to Pig Latin. (See below for the very simple definition of Pig Latin.) 
+• If a is a Sentence, converts the whole sentence to Pig Latin. 
+• If a is a Paragraph, converts the whole paragraph to Pig Latin. 
+• If a is a Story, converts the whole story to Pig Latin. 
+• To know whether an object is currently in Pig Latin, you could associate a Boolean flag with it as a private data member.
+--a
+• If a is a Word in Pig Latin, converts it from Pig Latin to plain English. 
+• If a is a Sentence, Paragraph, or Story, converts all contained Words that are in Pig Latin back to English.
+[Please note that a++ is different from ++a in C++. When ++ follows the variable, this is “postfix ++”; when it precedes the variable, it is “prefix ++”. Do a small amount of investigating to see how C++ allows you to overload postfix and prefix ++ and -- as four separate functions with different functionality. 
+<<
+• A Word class should output only the word’s characters, in order. 
+• The Sentence class should output each word. All but the last word should be followed by a single space. The last word should be followed by the punctuation mark associated with the Sentence (‘.’, ‘!’, or ‘?’), and then a single space.
+• The Paragraph class should output each Sentence, should be indented with a single tab character, and should be followed by a single newline character.
+• The Story class should output contained paragraphs, with blank lines between them.
+first() and rest() You should support functions first() and rest() on Story, Paragraph, and Sentence. If myStory is an instance of Story, myPara is an instance of Paragraph, and mySent is an instance of Sentence, then: 
+• myStory.first() returns a Paragraph containing a copy of the first paragraph of myStory. 
+• myPara.first() returns a Sentence containing a copy of the first sentence of myPara. 
+• mySent.first() returns a Word containing a copy of the first word of mySent. 
+• myStory.rest() returns a Story containing a copy of all but the first paragraph of myStory. 
+• myPara.rest() returns a Paragraph containing a copy of all but the first sentence of myPara. 
+• mySent.rest() returns a Sentence containing a copy of all but the first word of mySent.
