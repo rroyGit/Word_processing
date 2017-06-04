@@ -17,12 +17,13 @@ int main() {
 	
 	Story file("input.txt");
 	//file.show();
-	cout << file;
 	//file.save("output.txt");
 	//file.show();
-	//Story f = file + file;
+	Paragraph p("I am the best; the end.");
+	Story f = p + file;
 	//f.show();
-
+	cout << f;
+	
 	cout << "-----------------------------START---------------------------" << endl;
 	//f.show();
 	//cout << file.rest();

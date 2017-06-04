@@ -138,12 +138,11 @@ Story Story::operator+(const Paragraph& b) {
 		temp = temp->next;
 	}
 	temp->next = para1;
+	//solved segfault occured in operator<<
+	para1->next = NULL;
 	
 	newStory.head = story1->head;
 	newStory.next = NULL;
-	
-	
-	
 	//cout << "	Exiting Story::operator+ (Paragraph arg)" << endl;
 	return newStory;
 }
@@ -300,11 +299,13 @@ ostream& operator<<(ostream& out, const Story& b) {
 	//cout << "Entering Story operator<<" << endl;
 	
 	Paragraph* temp = b.head;
+	int i = 0;
 	while(temp != NULL){
 		out <<'\t';
 		out << *temp;
 		out <<'\t' << '\n' << '\n';
 		temp = temp->next;
+		i++;
 	}
 	
 	//cout << "	Exiting Story operator<<" << endl;
