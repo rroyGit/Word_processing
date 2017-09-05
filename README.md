@@ -1,4 +1,3 @@
-
 # word_pro
 Word Processing (C++ I/O and text processing)
 
@@ -8,7 +7,7 @@ a) linked list container and pointers
 
 b) C++ heap memory management
 
-c) deep and shallow copies of construtors and assignment operators
+c) deep and shallow copies of constructors and assignment operators
 
 d) operator implementation and overloading (eg. assignment operators, friend functions, etc.)
 
